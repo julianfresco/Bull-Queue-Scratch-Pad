@@ -17,6 +17,7 @@ helloWorldQueue.process(function(job, done){
 })
 
 helloWorldQueue.add({index: 9001}, {attempts: 4});
+helloWorldQueue.resume();
 
 setTimeout(function(){ 
   process.exit(200); // Done
