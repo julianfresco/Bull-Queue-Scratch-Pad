@@ -5,8 +5,7 @@ var helloWorldQueue = Queue('hello world', 6379, '127.0.0.1');
 helloWorldQueue.on('failed', function(job, err){
   // Job failed with reason err!
   console.log('Job with index ' +job.data.index+ ' failed with message:\n', err);
-  // console.log('Job object:\n', job);//JSON.stringify(job, null, 2));
-  console.log('Attempts made:\n', job.attemptsMade);//JSON.stringify(job, null, 2));
+  console.log('Attempts made:\n', job.attemptsMade);
   console.log('Is last attempt?  => ', (job.attemptsMade === job.opts.attempts))
 })
 
