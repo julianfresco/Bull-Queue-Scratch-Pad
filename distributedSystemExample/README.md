@@ -4,9 +4,9 @@ Suppose you want one program to add jobs, and one or many other programs to list
 
 ## How to Run
 
-To see it in action, open up 2 shell sessions and in one, run publisher and in the other run listener.
+To see it in action, open up 2 shell sessions and in one, run publisher and in the other run listener. These sessions can be from different machines--you will need to update the redis host IP so they point to the same redis instance.
 
-**Terminal 1**
+**Terminal/Machine 1**
 
     $ node publisher
     Added 9 jobs to `hello world distributed` queue.
@@ -16,7 +16,7 @@ To see it in action, open up 2 shell sessions and in one, run publisher and in t
     Added 5 jobs to `hello world distributed` queue.
 
 
-**Terminal 2**
+**Terminal/Machine 2**
 
     $ node listener
     Hello World from distributed listener - 0
