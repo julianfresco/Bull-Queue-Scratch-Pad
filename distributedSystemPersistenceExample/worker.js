@@ -11,9 +11,11 @@ var mockLongProcess = function(s){
 // Define how the queue is processed
 workerQueue.process(function(job, done){
 
-  console.log('========\nJOB '+ job.data.index +'\n========');
+  console.log('========');
+  console.log('JOB '+ job.data.index +': Started...');
   mockLongProcess(2); // Sleep for 2 seconds
-  console.log('Distributed worker finished job # '+ job.data.index);
+  console.log('JOB '+ job.data.index +': FINISHED.');
+  console.log('========\n');
 
   done();
 

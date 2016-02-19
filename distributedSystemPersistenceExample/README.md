@@ -9,10 +9,8 @@ To see it in action, open up 3 shell sessions and in one, run scheduler and in t
 **Terminal/Machine 1**
 
     $ node scheduler
-    Added 8 jobs to `hello world distributed` queue [8 total].
-    Added 7 jobs to `hello world distributed` queue [15 total].
-    Added 5 jobs to `hello world distributed` queue [20 total].
-    Added 8 jobs to `hello world distributed` queue [28 total].
+    Added 9 jobs to `hello world distributed` queue [9 total].
+    Added 8 jobs to `hello world distributed` queue [17 total].
 
 
 **Terminal/Machine 2**
@@ -21,20 +19,22 @@ We will terminate this worker and see the other worker pick up the incomplete jo
 
     $ node worker
     ========
-    JOB 1
+    JOB 0: Started...
+    JOB 0: FINISHED.
     ========
-    Distributed worker finished job # 1
+
     ========
-    JOB 3
+    JOB 3: Started...
+    JOB 3: FINISHED.
     ========
-    Distributed worker finished job # 3
+
     ========
-    JOB 4
+    JOB 4: Started...
+    JOB 4: FINISHED.
     ========
-    Distributed worker finished job # 4
+
     ========
-    JOB 7
-    ========
+    JOB 7: Started...
     ^C
 
 
@@ -48,35 +48,43 @@ We terminated worker 1 in the middle of Job 7. We see here that a couple jobs la
 
     $ node worker
     ========
-    JOB 0
+    JOB 1: Started...
+    JOB 1: FINISHED.
     ========
-    Distributed worker finished job # 0
-    ========
-    JOB 2
-    ========
-    Distributed worker finished job # 2
-    ========
-    JOB 5
-    ========
-    Distributed worker finished job # 5
-    ========
-    JOB 6
-    ========
-    Distributed worker finished job # 6
-    ========
-    JOB 8
-    ========
-    Distributed worker finished job # 8
-    ========
-    JOB 9
-    ========
-    Distributed worker finished job # 9
-    ========
-    JOB 7
-    ========
-    Distributed worker finished job # 7
-    ========
-    JOB 10
-    ========
-    Distributed worker finished job # 10
 
+    ========
+    JOB 2: Started...
+    JOB 2: FINISHED.
+    ========
+
+    ========
+    JOB 5: Started...
+    JOB 5: FINISHED.
+    ========
+
+    ========
+    JOB 6: Started...
+    JOB 6: FINISHED.
+    ========
+
+    ========
+    JOB 8: Started...
+    JOB 8: FINISHED.
+    ========
+
+    ========
+    JOB 9: Started...
+    JOB 9: FINISHED.
+    ========
+
+    ========
+    JOB 7: Started...
+    JOB 7: FINISHED.
+    ========
+
+    ========
+    JOB 10: Started...
+    JOB 10: FINISHED.
+    ========
+
+    ..etc..
